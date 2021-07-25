@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Имя курьера</th>
-      <th>E-mail курьера</th>
+
       <th>Действия над курьером</th>
       <th colspan="3"></th>
     </tr>
@@ -16,7 +16,7 @@
     <% @couriers.each do |courier| %>
       <tr>
         <td><%= courier.name %></td>
-        <td><%= courier.email %></td>
+      
         <td><%= link_to 'Показать', courier %>
         <%= link_to 'Редактировать', edit_courier_path(courier) %>
         <%= link_to 'Удалить', courier, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'Добавить поезд', new_courier_path %>
+<%= link_to 'Добавить курьера', new_courier_path %>

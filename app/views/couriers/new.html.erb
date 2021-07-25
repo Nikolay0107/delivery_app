@@ -1,0 +1,32 @@
+<h1>Добавить курьера</h1>
+
+<%= form_for(@courier) do |form| %>
+  <% if @courier.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@courier.errors.count, "error") %> prohibited this courier from being saved:</h2>
+
+      <ul>
+        <% @courier.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field-name">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <br>
+  <div class="field-email">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= form.submit 'Создать' %>
+  </div>
+<% end %>
+
+<br>
+<%= link_to 'Назад', couriers_path %>
