@@ -11,16 +11,11 @@
   </thead>
 
   <tbody>
-    <% @packages.each do |package| %>
-      <tr>
-        <td><%= package.tracking_number %></td>
-        <td><%= package.delivery_status %></td>
-      </tr>
-    <% end %>
+    <%= render @packages%>
   </tbody>
 
 </table>
 
-<br>
 
-<%= link_to 'Добавить посылку', new_package_path %>
+<br><br>
+<%= link_to 'На главную', welcome_index_path %>

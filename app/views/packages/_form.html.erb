@@ -1,0 +1,32 @@
+<%= form_for(@package) do |form| %>
+<%= render 'common/errors', resource: @package %>
+  <div class="field-tracking_number">
+    <%= form.label :tracking_number %>
+    <%= form.text_field :tracking_number %>
+  </div>
+  <br>
+
+
+  <div class="field-delivery_status">
+    <%= form.label :delivery_status, "Статус доставки" %>
+    <%= form.text_field :delivery_status %>
+  </div>
+  <br>
+
+
+
+
+
+
+
+
+  <div class="field-courier_on_the_way">
+    <%= form.label :courier_on_the_way, "Назначить курьера для доставки" %>
+    <%= form.collection_select :courier_on_the_way_id, Courier.all, :id, :name %>
+  </div>
+
+  <br>
+  <div class="actions">
+    <%= form.submit "#{@package.new_record? ? 'Создать' : 'Изменить'}" %>
+  </div>
+<% end %>

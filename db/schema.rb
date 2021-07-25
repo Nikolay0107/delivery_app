@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_25_141225) do
+ActiveRecord::Schema.define(version: 2021_07_25_164002) do
 
   create_table "couriers", force: :cascade do |t|
     t.string "name"
@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2021_07_25_141225) do
     t.boolean "delivery_status"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "courier_on_the_way_id"
+    t.index ["courier_on_the_way_id"], name: "index_packages_on_courier_on_the_way_id"
   end
 
 end

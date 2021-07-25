@@ -14,7 +14,7 @@ class CouriersController < ApplicationController
   end
 
   def create
-      @courier = Courier.new(train_params)
+      @courier = Courier.new(courier_params)
       if @courier.save
         redirect_to @courier
       else
@@ -26,7 +26,7 @@ class CouriersController < ApplicationController
   end
 
   def update
-    if @courier.update(train_params)
+    if @courier.update(courier_params)
       redirect_to @courier
     else
       render :edit

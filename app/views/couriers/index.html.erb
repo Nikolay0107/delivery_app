@@ -6,26 +6,20 @@
   <thead>
     <tr>
       <th>Имя курьера</th>
-
       <th>Действия над курьером</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @couriers.each do |courier| %>
-      <tr>
-        <td><%= courier.name %></td>
-      
-        <td><%= link_to 'Показать', courier %>
-        <%= link_to 'Редактировать', edit_courier_path(courier) %>
-        <%= link_to 'Удалить', courier, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
-      </tr>
-    <% end %>
-
+    <%= render @couriers%>
   </tbody>
 </table>
 
 <br>
-
 <%= link_to 'Добавить курьера', new_courier_path %>
+
+<br><br>
+<%= link_to 'Добавить посылку', new_package_path(@package) %>
+<br>
+<br><br>
+<%= link_to 'На главную', welcome_index_path %>

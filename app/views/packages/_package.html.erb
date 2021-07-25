@@ -1,0 +1,14 @@
+<tr>
+  <td><%= package.tracking_number %></td>
+  <td><% if package.delivery_status?%>
+      доставлено
+      <%else%>
+      не доставлено
+      <% end %>
+  </td>
+  
+  <td>
+  <%= link_to 'Показать', package %>
+  <%= link_to 'Редактировать', edit_package_path(package) %>
+  <%= link_to 'Удалить', package, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+  </tr>

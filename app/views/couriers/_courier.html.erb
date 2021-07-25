@@ -1,0 +1,7 @@
+<tr>
+  <td><%= courier.name %></td>
+  <td>
+  <%= link_to 'Показать', courier %>
+  <%= link_to 'Редактировать', edit_courier_path(courier) %>
+  <%= link_to 'Удалить', courier, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+  </tr>

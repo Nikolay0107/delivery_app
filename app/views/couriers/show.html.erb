@@ -13,10 +13,11 @@
         <td><%= @courier.name %></td>
         <td><%= @courier.email %></td>
       </tr>
-
-
   </tbody>
 </table>
 <br>
-<%= link_to 'Редактировать', edit_courier_path(@courier) %> |
+<%= link_to 'Добавить посылку для этого курьера', new_package_path(@package) %>
+<br>
+<br>
+<%= link_to 'Редактировать данные курьера', edit_courier_path(@courier) %> |
 <%= link_to 'Назад', couriers_path %>
