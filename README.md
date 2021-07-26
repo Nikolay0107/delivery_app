@@ -1,24 +1,22 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Завдання:
+створити простий Rails-додаток
 
-Things you may want to cover:
+Задачі:
+  створити новий Rails додаток delivery_app
+  створити модель Courier з наступними полями:
+    name: String
+    email: String
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  створити сторінки для створення, відображення та зміни кур'єра
+  
+  створити сторінку зі списком кур'єрів та посиланнями на дії над кур'єром (із попереднього пункту)
+  
+  створити модель Package з наступними полями:
+    tracking_number: String
+    delivery_status: Boolean
+    
+  створити зв’язок між Courier та Package за принципом “один до багатьох”
+  
+  додати до сторінки відображення кур'єра форму для створення посилки.
