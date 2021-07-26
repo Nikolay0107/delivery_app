@@ -44,7 +44,7 @@ private
     @courier = Courier.find(params[:id])
   end
 
-  def train_params
+  def courier_params
     params.require(:courier).permit(:name, :email)
   end
 end

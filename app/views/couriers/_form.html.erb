@@ -1,0 +1,20 @@
+<%= form_for(@courier) do |form| %>
+
+  <%= render 'common/errors', resource: @courier %>
+
+  <div class="field-name">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+  </div>
+  <br>
+
+  <div class="field-email">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+  <br>
+
+  <div class="actions">
+    <%= form.submit "#{@courier.new_record? ? 'Создать' : 'Изменить'}" %>
+  </div>
+<% end %>

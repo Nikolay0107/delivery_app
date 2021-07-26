@@ -9,7 +9,6 @@
       <th>Действия над курьером</th>
     </tr>
   </thead>
-
   <tbody>
     <%= render @couriers%>
   </tbody>
@@ -17,9 +16,7 @@
 
 <br>
 <%= link_to 'Добавить курьера', new_courier_path %>
-
-<br><br>
 <%= link_to 'Добавить посылку', new_package_path(@package) %>
 <br>
-<br><br>
+<br>
 <%= link_to 'На главную', welcome_index_path %>

@@ -1,24 +1,27 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-<strong>Номер накладной:</strong>
+<h2>Данные о посылке</h2>
+
+<p><strong>Номер накладной:</strong>
 <%= @package.tracking_number %>
 </p>
 
-<p>
-<strong>Курьер, который доставит посылку:</strong>
-
-<% if @package.courier_on_the_way.present?%>
-<%= @package.courier_on_the_way.name%>
-<% else %>
-Не указано
+<p><strong>Курьер, ответственный за посылку:</strong>
+<% if @package.courier_on_the_way.present? %>
+<%= @package.courier_on_the_way.name %>
+<% else %>Не указано
 <% end %>
 </p>
 
-<p>
-<strong>Статус доставки:</strong>
-<%= @package.delivery_status %>
+<p><strong>Статус доставки:</strong>
+<% if @package.delivery_status? %> <b style="color:green;"> доставлено</b>
+<% else %> <b style="color:red;">не доставлено</b>
+<% end %>
+</p>
 
-<br><br><br>
-<%= link_to 'Редактировать', edit_package_path(@package) %> |
+<br>
+<br>
+<%= link_to 'Редактировать', edit_package_path(@package) %>
+<br>
+<br>
 <%= link_to 'Назад', packages_path %>
